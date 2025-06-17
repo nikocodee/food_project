@@ -1,0 +1,235 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+.wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+}
+.logo_wrap2{
+	text-align: center;
+    font-size: 23px;
+}
+.login_id2 {
+    margin-top: 5px;
+    width: 80%;
+    text-align: left;
+}    
+.login2 {
+  width: 30%;
+  height: 600px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h2 {
+  color: tomato;
+  font-size: 2em;
+}
+.login_id2 {
+  margin-top: 13px;
+  width: 80%;
+}
+
+.login_id2 input {
+   width: 85%;
+   height: 40px;
+   border-radius: 30px;
+   margin-top: 10px;
+   margin-left: 72px;
+   padding: 0px 20px;
+   border: 1px solid lightgray;
+   outline: none;
+}
+
+.submit2 {
+  margin-top: 35px;
+  margin-bottom: 50px;
+  width: 150%;
+}
+.submit2 input {
+  width: 47%;
+  margin-right: 350px;
+  height: 50px;
+  border: 0;
+  outline: none;
+  border-radius: 40px;
+  background: linear-gradient(to left, rgb(255, 77, 46), rgb(255, 155, 47));
+  color: white;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.join_button{
+    margin-left: 160px;
+    margin-top: -500px;
+}
+/*x버튼*/
+.notice-box2 {
+  padding:0px;
+  background-color:rgb(249, 250, 252);
+  text-align:left; 
+  margin-top: 0px;
+}
+#close2 {
+  border: 0;
+  float:right;
+  display:block;
+  padding:0px 0px;
+  font-weight: 700;
+  text-shadow: 0 1px 0 #fff;
+  font-size: 1.3rem;
+  margin-right: 12px;
+  margin-top: -28px;
+  background: #fff;
+}
+#close2:hover {
+  border: 0;
+  cursor:pointer;
+  opacity: .75;
+}
+
+/*유효성 검사 문구*/
+.final_id_ck{
+	font-size: 0.7em;
+    margin-left: 74px;
+    font-weight: bolder;
+    word-spacing: normal;
+    color: #0d6efd;
+	display: none;
+}
+.final_pw_ck{
+	font-size: 0.7em;
+    margin-left: 74px;
+    font-weight: bolder;
+    word-spacing: normal;
+    color: #0d6efd;
+	display: none;
+}
+.final_pwck_ck{
+	font-size: 0.7em;
+    margin-left: 74px;
+    font-weight: bolder;
+    word-spacing: normal;
+    color: #0d6efd;
+	display: none;
+}
+.final_name_ck{
+	font-size: 0.7em;
+    margin-left: 74px;
+    font-weight: bolder;
+    word-spacing: normal;
+    color: #0d6efd;
+	display: none;
+}
+.final_tel_ck{
+	font-size: 0.7em;
+    margin-left: 74px;
+    font-weight: bolder;
+    word-spacing: normal;
+    color: #0d6efd;
+	display: none;
+}
+.final_mail_ck{
+	font-size: 0.7em;
+    margin-left: 74px;
+    font-weight: bolder;
+    word-spacing: normal;
+    color: #0d6efd;
+	display: none;
+}
+.final_mailck_ck {
+    font-size: 0.7em;
+    margin-left: 74px;
+    font-weight: bolder;
+    word-spacing: normal;
+    color: #0d6efd;
+    display: none;
+    margin-top: -40px;
+}    
+.final_addr_ck{
+	font-size: 0.7em;
+    margin-right: 340px;
+    font-weight: bolder;
+    word-spacing: normal;
+    color: #0d6efd;
+	display: none;
+}
+
+/* 중복아이디 존재하지 않는경우 */
+.id_input_re_1{
+    font-size: 0.7em;
+    margin-left: 74px;
+    font-weight: bolder;
+    word-spacing: normal;
+	color : green;
+	display : none;
+}
+/* 중복아이디 존재하는 경우 */
+.id_input_re_2{
+	font-size: 0.7em;
+    margin-left: 74px;
+    font-weight: bolder;
+    word-spacing: normal;
+	color : red;
+	display : none;
+}
+
+/*비밀번호 확인 일치 유효성검사*/
+.pwck_input_re_1{
+	font-size: 0.7em;
+    margin-left: 74px;
+    font-weight: bolder;
+    word-spacing: normal;
+	color: green;
+	display: none;
+}
+.pwck_input_re_2{
+	font-size: 0.7em;
+    margin-left: 74px;
+    font-weight: bolder;
+    word-spacing: normal;
+	color: red;
+	display: none;
+}
+
+#mail_check_button{
+	display:inline;
+	height:42px;
+	width:41%;
+	margin-left: 340px;
+	margin-top: -8px;
+	margin-bottom: -900px;
+	top: 78.6%;
+	left: 30%;
+	transform: translate(-50%,-80%);
+	font-weight: bolder;
+}
+.addr_input_box{
+	display:inline;
+}
+/* float 속성 해제 */
+.clearfix{
+	clear: both;
+}

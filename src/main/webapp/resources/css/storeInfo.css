@@ -1,0 +1,71 @@
+@charset "UTF-8";
+body{
+	margin:0;
+	padding:0;
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+a{
+	text-decoration: none;
+}
+.container{
+	height: 100vh;
+	background: url(/resources/img/niku.jpg);
+	background-repeat:no-repeat;
+	background-position: center center;
+	background-size: cover;
+	left:0;
+	top:0;
+	z-index:-1;
+}
+.container:before{
+	content:'';
+	position: absolute;
+	width: 100%;
+	height:100%;
+}
+.card {
+    position: relative;
+    /* 부모 쪽 position:relative 지정하면 자식 쪽에서 absolute 배치시 기준이 되는 위치가 변경(브라우저-> 부모 위치) */
+    width: 1500px;
+    height: 1000px;
+    margin: 20px 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+ .card{
+    position: relative;
+    margin: 10px;
+    float: left;
+    width: 750px;
+    height: 435px;
+    transform: translate(230px, 50px);
+}
+.col-name{
+	transform: translate(-470px, 195px);
+	font-size: 0.9em;
+}
+.col-type{
+	transform: translate(-470px, 203px);
+	font-size: 0.8em;
+}
+.col{
+	transform: translate(-470px, 208px);
+	font-size: 0.8em;
+}
+.col-info{
+	transform: translate(-470px, 145px);
+	font-size: 0.8em;
+}
+.col-addr1{
+	transform: translate(-157px, 246px);
+	font-size: 0.8em;
+}
+.col-addr2{
+	transform: translate(-88px, 220px);
+	font-size: 0.8em;
+}
+.col-addr3{
+	transform: translate(-87px, 210px);
+	font-size: 0.8em;
+}

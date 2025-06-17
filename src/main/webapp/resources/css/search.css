@@ -1,0 +1,95 @@
+@charset "UTF-8";
+body{
+	margin:0;
+	padding:0;
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+a{
+	text-decoration: none;
+}
+.container{
+	height: 100vh;
+	background: url(/resources/img/niku.jpg);
+	background-repeat:no-repeat;
+	background-position: center center;
+	background-size: cover;
+	left:0;
+	top:0;
+	z-index: -1;
+}
+.container:before{
+	content:'';
+	position: absolute;
+	width: 100%;
+	height:100%;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+/*사이드바*/
+.sidebar{
+	width: 166px;
+	padding-top: 100px;
+	line-height: 0px;
+	/* border-right: 1px solid; */
+	height: 100vh;
+}
+.sidebar a{
+	display: block;
+	text-align: center;
+	padding: 40px 0;
+	color:#fff;
+	font-size: 1.3em;
+    font-weight: 500;	
+    font-family:"궁서체";
+    cursor:pointer;
+    margin-top: -25px;
+}
+.side_link{
+	z-index:1;
+	position: relative;
+	color:#fff;
+}
+#info{
+    width: 320px;
+    margin: 50px auto;
+}
+.card{
+    position: relative;
+    /* 부모 쪽 position:relative 지정하면 자식 쪽에서 absolute 배치시 기준이 되는 위치가 변경(브라우저-> 부모 위치) */
+    width: 300px;
+    height: 500px;
+    margin: 20px 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+.words{
+    position: absolute;
+    left: 10px;
+    top: 300px;
+    padding: 10px;
+    text-align: center;
+}
+ #info{
+     width: 1716px;
+ }
+ .card{
+     position: relative;
+     margin: 10px;
+     float: left;
+     width: 330px;
+     height: 122px;
+     transform: translate(180px, -500px);
+ }
+ .words{
+     position: absolute;
+     left: 145px;
+     top: 9px;
+     width: 200px;
+     font-size:12px;
+ }
+ 
+.table{
+	width: 1300px;
+	margin-top: -35px;
+}
+ 

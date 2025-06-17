@@ -1,0 +1,114 @@
+@charset "UTF-8";
+body{
+	margin:0;
+	padding:0;
+	overflow-x:hidden;
+}
+a{
+	text-decoration: none;
+}
+.card {
+    position: relative;
+    /* 부모 쪽 position:relative 지정하면 자식 쪽에서 absolute 배치시 기준이 되는 위치가 변경(브라우저-> 부모 위치) */
+    width: 300px;
+    height: 500px;
+    margin: 20px 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+.words {
+    position: absolute;
+    left: 10px;
+    top: 300px;
+    padding: 10px;
+    text-align: center;
+}
+ .card{
+     position: relative;
+     margin: 10px;
+     float: left;
+     width: 330px;
+     height: 122px;
+ }
+ .words{
+     position: absolute;
+     left: 145px;
+     top: 9px;
+     width: 200px;
+     font-size:12px;
+ }
+ 
+.table{
+	width: 1300px;
+	transform: translate(100px,30px);
+}
+	/* 검색 영역 */
+.search_wrap{
+	margin-top:15px;
+}
+.search_input{
+    position: relative;
+    text-align:center;	
+}
+.search_input input[name='keyword']{
+	padding: 4px 10px;
+    font-size: 15px;
+    height: 20px;
+    line-height: 20px;
+    transform: translate(-590px, 340px);
+    border:1px solid #ccc;
+    position:relative;
+}
+.search_btn{
+	height: 30px;
+    width: 80px;
+    font-size: 15px;
+    margin-left: 0px;
+    background-color: #fff;
+    border:1px solid #ccc;
+    color:black;
+    cursor:pointer;
+    transform: translate(-590px, 340px);
+    position: absolute;
+}
+
+
+	/* 페이지 버튼 인터페이스 */
+.pageMaker_wrap{
+	text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.pageMaker{
+    list-style: none;
+    display: inline-block;
+}	
+.pageMaker_btn {
+    float: left;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 20px;
+    transform: translate(-590px, 310px);
+    position: absolute;
+}
+.active{
+	border : 2px solid #201f1f42;
+	font-weight:400;
+}
+.next, .prev {
+    border: 1px solid #ccc;
+    padding: 0 10px;
+}
+.pageMaker_btn a:link {color: black;}
+.pageMaker_btn a:visited {color: black;}
+.pageMaker_btn a:active {color: black;}
+.pageMaker_btn a:hover {color: black;}
+.next a, .prev a {
+    color: #ccc;
+}
+
+/* float 속성 해제 */
+.clearfix{
+    clear: both;
+} 

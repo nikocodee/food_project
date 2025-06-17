@@ -1,0 +1,201 @@
+@charset "UTF-8";
+body{
+	margin:0;
+	padding:0;
+}
+.container{
+	height: 100vh;
+	background: url(/resources/img/main.jpg);
+	background-repeat:no-repeat;
+	background-position: center center;
+	background-size: cover;
+	left:0;
+	top:0;
+}
+.container:before{
+	content:'';
+	position: absolute;
+	width: 100%;
+	height:100%;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+a{
+	text-decoration: none;
+}
+
+/*사이드바*/
+.sidebar{
+  padding-top: 130px;
+  line-height: 0px;
+}
+.sidebar a{
+	display: block;
+	text-align: center;
+	padding: 40px 0;
+	border-bottom: 1px solid #000;
+	color:#fff;
+    font-size: 22px;
+    font-family:"궁서체";
+}
+
+input[id="menuicon"] {display:none;}
+input[id="menuicon"] + label {display:block;width:30px;height:28px;position:relative;cursor:pointer;padding-left:10px;}
+input[id="menuicon"] + label span {display:block;position:absolute;width:100%;height:3px;border-radius:30px;background:#fff;transition:all .35s;}
+input[id="menuicon"] + label span:nth-child(1) {top:0;}
+input[id="menuicon"] + label span:nth-child(2) {top:50%;transform:translateY(-50%);} /* 비슷하게 사용할 수 있는 style top:calc(50% - 2.5px); margin-top:-2.5px;*/
+input[id="menuicon"] + label span:nth-child(3) {bottom:0;}
+input[id="menuicon"]:checked + label {z-index:2;}
+input[id="menuicon"]:checked + label span {background:#fff;}
+input[id="menuicon"]:checked + label span:nth-child(1) {top:50%;transform:translateY(-50%) rotate(45deg);}
+input[id="menuicon"]:checked + label span:nth-child(2) {opacity:0;}
+input[id="menuicon"]:checked + label span:nth-child(3) {bottom:50%;transform:translateY(50%) rotate(-45deg);}
+div[class="sidebar"] {width:200px;height:100%;background:#222;background-color: rgba(0, 0, 0, 0.2);position:fixed;top:0;left:-300px;transition:all .35s;z-index: 1000;}
+input[id="menuicon"]:checked + label + div {left:0;}
+
+/*네비바*/
+.nav-link{
+	z-index:1;
+	position: relative;
+	color:#fff;
+}
+.login_item{
+	color:#fff;
+}
+ul{
+	list-style:none;
+}
+.login_area{
+	text-align: right;
+    float: right;
+    padding-right: 50px;
+    padding-top: 19px;
+    word-spacing: 10px;
+}
+form.search{
+	width: 500px;
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	color:#fff;
+	text-align: center;
+}
+form.search img{
+	font-weight: normal;
+	width: 65%;
+    margin-bottom: -15px;
+}
+form.search input{
+	border: none;
+}
+form.search input[type=text]{
+	background-color: #fff;
+	width:340px;
+	padding:10px;
+	border-radius: 25px 25px 25px 25px; 
+	position: relative;
+}
+form.search input[type=submit]{
+	background-color: gray;
+	padding:10px;
+	border-radius: 0 25px 25px 0; 
+	color: #fff;
+	margin-left: -6px;
+}
+form.search button {
+  position : absolute;
+  width: 36px;
+  top: 227px;
+  right: 85px;
+  border: none;
+  background-color:#fff;
+  cursor:pointer;
+}
+/*회원가입*/
+#mail_check_input_box_true{
+    background-color:white;
+}
+.correct{
+    color : green;
+}
+.incorrect{
+    color : red;
+}
+
+/*팝업 처리*/
+.pop-layer .pop-container {
+  padding: 20px 25px;
+}
+
+.pop-layer p.ctxt {
+  color: #666;
+  line-height: 25px;
+}
+
+.pop-layer .btn-r {
+  width: 100%;
+  margin: 10px 0 20px;
+  padding-top: 10px;
+  border-top: 1px solid #DDD;
+  text-align: right;
+}
+
+.pop-layer {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid rgb(192, 192, 192);
+  z-index: 9999;
+}
+
+.dim-layer {
+  display: none;
+  position: fixed;
+  _position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.dim-layer .dimBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+  filter: alpha(opacity=50);
+}
+
+.dim-layer .pop-layer {
+  display: block;
+}
+
+a.btn-layerClose {
+  display: inline-block;
+  height: 25px;
+  padding: 0 14px 0;
+  border: 1px solid #304a8a;
+  background-color: #3f5a9d;
+  font-size: 13px;
+  color: #fff;
+  line-height: 25px;
+}
+
+a.btn-layerClose:hover {
+  border: 1px solid #091940;
+  background-color: #1f326a;
+  color: #fff;
+}
+.pop-container2{
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 500px;
+}

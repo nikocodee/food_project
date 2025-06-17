@@ -1,0 +1,129 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.kimi.mapper.StoreMapper">
+  	
+  	<!-- 상품 검색 -->
+	<select id="storeList" resultType="com.kimi.model.StoreVO">
+	
+	   <![CDATA[
+		select * from(
+		    select /*+INDEX_DESC(store SYS_C007665)*/
+		    rownum as rn, 
+		    	st_id, st_name, st_biznum,
+		    	st_type, regdate
+		    from store
+		    where
+		     
+		]]>    
+		
+		 <if test="keyword != null">
+		    
+		    st_name like '%' || #{keyword} || '%' or
+		    st_type like '%' || #{keyword} || '%'
+		    and
+		    
+	    </if>
+				     
+		<![CDATA[    
+		    rownum <= #{pageNum} * #{amount} 
+		    )
+		where rn > (#{pageNum} -1) * #{amount}		  	
+  		]]>
+  		
+	</select>	
+	
+	<!-- 상품 총 개수 -->
+  	<select id="storeGetTotal" resultType="int">
+  	
+  		select count(*) from store
+  		
+  		<if test="keyword != null">
+  		
+  			where st_name like '%' || #{keyword} || '%'
+  		</if>
+  		
+  	</select> 
+  	
+  	<select id="getCate1" resultType="com.kimi.model.StoreVO">
+		select * from store 
+		where st_type = '한식'
+	</select>
+	
+	<select id="getCate2" resultType="com.kimi.model.StoreVO">
+		select * from store 
+		where st_type = '양식'
+	</select>
+	
+	<select id="getCate3" resultType="com.kimi.model.StoreVO">
+		select * from store 
+		where st_type = '중식'
+	</select>
+	
+	<select id="getCate4" resultType="com.kimi.model.StoreVO">
+		select * from store 
+		where st_type = '일식'
+	</select>
+	
+	<select id="getCate5" resultType="com.kimi.model.StoreVO">
+		select * from store 
+		where st_type = '카페/디저트'
+	</select>
+  	
+  	
+	  
+	 <insert id="storeRegister">
+	 
+	 	<selectKey resultType="int" keyProperty="st_id" order="AFTER">
+			SELECT store_seq.currval FROM dual  	
+	 	</selectKey>
+	 	
+		 	INSERT INTO STORE
+		 	(st_id, st_name, st_biznum, st_type, st_tel, st_time1, st_time2, st_addr1, st_addr2, st_addr3, st_info,regdate,updatedate)
+		 	VALUES
+		 	(store_seq.nextval,#{st_name},#{st_biznum},#{st_type},#{st_tel},#{st_time1},#{st_time2},
+		 	#{st_addr1},#{st_addr2},#{st_addr3},#{st_info},sysdate,sysdate)
+		 	
+	 </insert>
+	 
+	 <insert id="imageRegister">
+		
+		INSERT INTO ST_ATTACH(st_id, fileName, uploadPath, uuid) VALUES (#{st_id}, #{fileName}, #{uploadPath}, #{uuid})
+	
+	 </insert>
+	 
+	 <select id="StoreDetail" resultType="com.kimi.model.StoreVO">
+  		SELECT st_id, st_name, st_biznum, st_type, st_tel, st_time1, st_time2, st_addr1, st_addr2, st_addr3, st_info,
+  		regdate, updatedate
+  		FROM STORE where st_id = #{st_id}
+  	</select> 
+  	
+  	<update id="storeModify">
+  		UPDATE STORE 
+  		SET 
+  		st_id = #{st_id}, st_name = #{st_name}, st_biznum = #{st_biznum}, st_type = #{st_type}, 
+  		st_tel = #{st_tel}, st_time1 = #{st_time1}, st_time2 = #{st_time2}, 
+  		st_addr1 = #{st_addr1}, st_addr2 = #{st_addr2}, st_addr3 = #{st_addr3}, 
+  		st_info = #{st_info}, updatedate = sysdate
+  		WHERE st_id = #{st_id}
+  	</update>
+  	
+  	<!-- 지정 상품 이미지 전체 삭제 --> 
+	<delete id="deleteImageAll">
+	
+		DELETE FROM st_attach WHERE st_id = #{st_id}
+	
+	</delete>
+	
+	<delete id="storeDelete">
+		delete from store where st_id = #{st_id}
+	</delete>
+	
+	<!-- 지정 상품 이미지 정보 얻기 -->
+	<select id="getAttachInfo" resultType="com.kimi.model.attachDTO">
+	
+		select * from st_attach where st_id = #{st_id}
+	
+	</select>
+	
+  </mapper>

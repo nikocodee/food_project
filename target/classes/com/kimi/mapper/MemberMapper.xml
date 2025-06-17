@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.kimi.mapper.MemberMapper">
+ 	<insert id="memberJoin">
+ 		INSERT INTO FOOD_MEMBER VALUES(#{id}, #{pw}, #{name}, #{tel}, #{mail}, #{addr1}, #{addr2}, #{addr3}, #{adminCk}, SYSDATE)
+ 	</insert>
+ 	
+ 	<select id="idCheck" resultType="int">
+ 		SELECT COUNT(*) FROM FOOD_MEMBER WHERE ID = #{id}
+ 	</select>
+ 	
+ 	<select id="memberLogin" resultType="com.kimi.model.MemberVO">
+ 		SELECT ID
+ 		     , NAME
+ 		     , PW 
+ 		     , ADMINCK
+ 		  FROM FOOD_MEMBER
+ 	     WHERE ID = #{id}
+ 		<!--select id, name, adminck from food_member where id = #{id} and pw = #{pw}-->
+ 	</select>
+ 	
+ 	<select id="memberInfo" resultType="com.kimi.model.MemberVO">
+  		SELECT id, pw, name, tel, mail, addr1, addr2, addr3 
+  		FROM FOOD_MEMBER 
+  		WHERE id = #{id}
+  	</select>
+  	
+  	<update id="memberModify">
+  		UPDATE FOOD_MEMBER SET
+  		tel=#{tel}, addr1=#{addr1}, addr2=#{addr2}, addr3=#{addr3}
+  		WHERE id = #{id}
+  	</update>
+  	
+  	<update id="modifyPw">
+  		UPDATE FOOD_MEMBER 
+  		SET pw = #{newpw}
+  		WHERE id = #{id}
+  	</update>
+  	
+  	<delete id="deleteMember">
+  		DELETE FROM FOOD_MEMBER
+  		WHERE id = #{id}
+<!--   		AND pw = #{pw} -->
+  	</delete>
+ 	
+ </mapper> 

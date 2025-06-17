@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+.wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+}
+.logo_wrap2{
+	text-align: center;
+    font-size: 23px;
+}
+.login_id2 {
+    margin-top: 5px;
+    width: 80%;
+    text-align: left;
+}    
+.login2 {
+  width: 30%;
+  height: 600px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h2 {
+  color: black;
+  font-size: 2em;
+}
+h4{
+	font-size: 12px;
+	font-weight: 500;
+}
+.login_id2 {
+  margin-top: 13px;
+  width: 80%;
+}
+
+.login_id2 input {
+   width: 50%;
+   height: 30px;
+   border-radius: 30px;
+   margin-top: 3px;
+   margin-left: 72px;
+   padding: 0px 20px;
+   border: 1px solid lightgray;
+   outline: none;
+}
+
+#st_info_input{
+	height: 100px;
+    width: 390px;
+    border-radius: 20px;
+    border: 1px solid lightgray;
+    margin-left: 70px;
+    margin-top: 10px;
+}
+
+.submit2 {
+  width: 150%;
+  display:inline;
+}
+.submit2 input {
+  margin-right: 350px;
+  height: 50px;
+  border: 0;
+  outline: none;
+  border-radius: 40px;
+  background: lightgray;
+  color: white;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 18%;
+}
+.join_button{
+    margin-left: 160px;
+    margin-top: -500px;
+}
+/* float 속성 해제 */
+.clearfix{
+	clear: both;
+}

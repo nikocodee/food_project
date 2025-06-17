@@ -1,0 +1,27 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.kimi.mapper.MenuMapper">
+  
+  <!-- 메뉴 등록 -->
+  <insert id="menuRegister">
+  
+  	<selectKey resultType="int" keyProperty="mn_id" order="AFTER">
+  		SELECT menu_seq.currval FROM dual
+  	</selectKey>
+  	
+	  	INSERT INTO ST_MENU
+	  	(mn_id, st_id, mn_name, mn_price, mn_content, regdate, updatedate)
+	  	VALUES
+	  	(menu_seq.nextval,#{st_id},#{mn_name},#{mn_price},#{mn_content},
+	  	sysdate,sysdate)
+	  	
+  </insert>
+  
+  <insert id="imageRegister">
+		
+	INSERT INTO MN_ATTACH(mn_id, fileName, uploadPath, uuid) VALUES (#{mn_id}, #{fileName}, #{uploadPath}, #{uuid})
+
+  </insert>
+  
+ </mapper> 
